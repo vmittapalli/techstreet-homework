@@ -1,17 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { InitModule } from '../angular/init';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    InitModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [],
