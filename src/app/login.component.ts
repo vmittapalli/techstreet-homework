@@ -4,13 +4,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import{LoginService} from './login.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'login-component',
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
   loginForm: FormGroup;
   loggedIn:  string = null;
-
+  model: any = {};
   constructor(
     private _service: AngularService,
     private _builder: FormBuilder,

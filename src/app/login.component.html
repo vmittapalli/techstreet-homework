@@ -1,6 +1,12 @@
 <h2>Login</h2>
-<form>
-  <input placeholder="Login" #userName />
-  <input placeholder="Password" #userPassword type="password" />
-  <button (click)="save(userName.value,userPassword.value)" type="Submit">Submit</button>
-</form>
+  <form  name="form" (ngSubmit)="loginform.form.valid && save(model.username,model.password)" #loginform="ngForm" novalidate>
+ <div style="display: inline-block; vertical-align: top;">
+    <input placeholder="Login" type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+  <div *ngIf="loginform.submitted && !username.valid" style="color: red">Username is required</div>
+ </div>
+ <div style="display: inline-block; vertical-align: top;">
+  <input placeholder="Password"  name="password" type="password"  [(ngModel)]="model.password" #password="ngModel" required />
+  <div *ngIf="loginform.submitted && !password.valid" style="color: red">Password is required</div>
+</div>
+<div style="display: inline-block; vertical-align: top;"> <button  type="Submit">Submit</button>  </div>
+</form> 
