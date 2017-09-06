@@ -1,6 +1,6 @@
 <h2>Login</h2>
 <form>
-  <input placeholder="Login" />
-  <input placeholder="Password" type="password" />
-  <button (click)="save()" type="Submit">Submit</button>
+  <input placeholder="Login" #userName />
+  <input placeholder="Password" #userPassword type="password" />
+  <button (click)="save(userName.value,userPassword.value)" type="Submit">Submit</button>
 </form>
